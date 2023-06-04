@@ -19,12 +19,14 @@ function ToDoList() {
     const [newTodo, setNewTodo] = useState<string>('');
     const [importantTodo, setImportantTodo] = useState<boolean>(true);
     const [dateTodo, setDateTodo] = useState<Date| undefined >();
+    const [containerVisible, setContainerVisible] = useState(false);
 
     const handleAddTodos = () => {
         if (newTodo) {
             setTodos([...todos, { id: todos.length + 1, title: newTodo, completed: false, important: importantTodo, dueDate: dateTodo}]);
             setNewTodo('');
             setDateTodo(undefined);
+            setContainerVisible(true);
         }
     };
 
@@ -58,6 +60,7 @@ function ToDoList() {
         setDateTodo(new Date(event.target.value));
     }
 
+
     return (
         <div className="todo-container">
             <h1 className="todo-name"><b>To Do List</b></h1>
@@ -68,7 +71,7 @@ function ToDoList() {
             </select>
             <input className="todo-input" name="dueDate" type="date" value={dateTodo?.toISOString().substring(0,10)|| ''} onChange={handleDateTodos}  />
             <button className="add-button" onClick={handleAddTodos}>Add</button>
-            <div className="todo-list">
+            {containerVisible && (<div className="todo-list">
                 <ol>
                     {todos.map(todo => (
                         <li key={todo.id} style={{ textDecoration: todo.completed ? 'line-through' : 'none', color: todo.important ? 'red' : 'black' }} onClick={() => { return { todo } }}>
@@ -80,7 +83,7 @@ function ToDoList() {
 
                     ))}
                 </ol>
-            </div>
+            </div>)}
         </div>
     );
 }
