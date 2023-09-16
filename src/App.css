@@ -1,38 +1,68 @@
-.App {
+body{
+  background-color: #f7f2e9;
+  font-family: 'Montserrat', sans-serif;
+}
+.todo-list{
+  margin: 30px;
+  background-color: white;
+  border-radius: 10px;
+  padding: 10px;
+  border: 2px solid;
+}
+.todo-container{
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
+
+ol > li{
+  text-align: left;
+  font-size: 16pt;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.todo-input{
+  padding: 7px;
+  border: 2px solid;
+  border-radius: 8px;
+   -webkit-transition: width .35s ease-in-out;
+  transition: width .35s ease-in-out;
+  font-size: 14pt;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.todo-input:focus{
+  border-color: #f6dbb0;
 }
 
-.App-link {
-  color: #61dafb;
+
+.add-button{
+  border-radius: 8px;
+  padding: 3px;
+  font-size: 16pt;
+  border: 2px solid;
+  margin: 10px;
+  background-color: #ffff;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.add-button:hover, .extra-button:hover{
+  background-color: #f6dbb0;
+  color: #ffff;
+}
+
+.extra-button{
+  border-radius: 5px;
+  padding: 1px;
+  font-size: 14pt;
+  border: 2px solid;
+  margin-top: 10px;
+  margin-left: 20px;
+  background-color: #f7f2e9;
+}
+
+select{
+  background-color: #ffff;
+  font-size: 16pt;
+  margin: 10px;
+  border: 2px solid;
+  border-radius: 5px;
+  padding: 5px
 }
